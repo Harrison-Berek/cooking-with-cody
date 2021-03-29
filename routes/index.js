@@ -4,7 +4,7 @@ const passport = require('passport');
 
 
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('home');
 });
 
 router.get('/auth/google', passport.authenticate(
