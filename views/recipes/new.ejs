@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<form action="/recipes/index" method="POST" id="new-recipe-form">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <br>
+    <label>Ingredients:</label>
+    <br>
+    <textarea name="ingredient" cols="30" rows="10"></textarea>
+    <label>Instructions:</label>
+    <textarea name="instructions" cols="30" rows="10"></textarea>
+    <label>Diet:</label>
+    <select name="diet">
+        <option value="Vegan">Vegan</option>
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="Pescatarian">Pescatarian</option>
+    </select>
+    <label>Gluten Free:</label>
+    <input type="checkbox">
+</form>
+
+<%- include('../partials/footer') %>
+
