@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
     title: {
-        type: Sting,
+        type: String,
         required: true
     },
     ingredients: {
@@ -21,7 +21,8 @@ const recipeSchema = new Schema({
     diet: {
         type: String,
         enum: ['Vegan', 'Gluten Free', 'Vegetarian', 'Pescatarian']
-    }
+    },
+    user: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {
     timestamps: true
 })

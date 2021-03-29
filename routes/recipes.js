@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const recipesCtrl = ('../controllers/recipes');
-const isLoggedIn = ('../config/auth');
+const recipesCtrl = require('../controllers/recipes');
+const isLoggedIn = require('../config/auth');
 
 // GET /recipes index (All recipes) 
 router.get('/', recipesCtrl.index);
