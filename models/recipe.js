@@ -5,10 +5,12 @@ const commentSchema = new Schema({
     content: String,
     tasteRating: {type: Number, min:1, max: 5},
     easeRating: {type: Number, min:1, max:5},
-    time: Number,
+    time: String,
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: String,
     userAvatar: String
+}, {
+    timestamps: true
 })
 
 const recipeSchema = new Schema({

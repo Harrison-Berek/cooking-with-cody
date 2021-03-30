@@ -22,16 +22,78 @@
     </tbody>
 </table>
 
-<table id="show-comments">
-    <thead>
+<h2>Commets</h2>
+<% if (user) {%> 
+<form id="show-comments-form" method="POST" action="/recipes/<%= recipe._id %>/comments">
+  <label>Comments:</label>
+  <textarea name="content" cols="20" rows="1"></textarea>
+  <label>Taste Rating:</label>
+  <select name="tasteRating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <label>Ease Rating:</label>
+  <select name="easeRating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <label>Cook Time:</label>
+  <input name="time" type="text">
+  <input type="submit" value="Add Comment">
+</form>
+<% } %>
 
+<% if (recipe.comments.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Comments</th>
+        <th>Taste Rating</th>
+        <th>Ease Rating</th>
+        <th>Cook Time</th>
+        <th></th>
+      </tr>
     </thead>
     <tbody>
-
+        <% let tasteTotal = 0 %>
+        <% let easeTotal = 0 %>
+        <% recipe.comments.forEach(function(c) { %>
+            <% tasteTotal += c.tasteRating %>
+            <% easeTotal += c.easeRating %>
+            <tr>
+                <td class="comment-user"><img src="<%= c.userAvatar %>">&nbsp;<%= c.userName %></td>
+                <td><%= new Date().toLocaleDateString(); %></td>
+                <td><%= c.content %></td>
+                <td><%= c.tasteRating %></td>
+                <td><%= c.easeRating %></td>
+                <td><%= c.time %></td>
+            </tr>
+            <td>
+          <% if (user && user._id.equals(c.user)) { %>
+            <form action="/comment/<%= c._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
+          <% } %>
+        </td>
+      <% }); %>
+      <tr>
+        <td colspan="3"></td>
+        <td><strong><%= (tasteTotal / recipe.comments.length).toFixed(1) %></strong></td>
+        <td><strong><%= (easeTotal / recipe.comments.length).toFixed(1) %></strong></td>
+        <td></td>
+      </tr>
     </tbody>
-</table>
-
-
-
+  </table>
+<% } else { %>
+  <h5>No Comments Yet</h5>
+<% } %>
 
 <%- include('../partials/footer') %>
