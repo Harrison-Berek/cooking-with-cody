@@ -3,23 +3,22 @@
 <table id="recipe-list">
   <thead>
     <tr>
-      <th>Title:</th>
-      <th></th>
-      <th>Ingredients</th>
-      <th>Instructions</th>
-      <th>Diet</th>
+      <th>Name:</th>
+      <th>Ingredients:</th>
+      <th>Instructions:</th>
+      <th>Diet:</th>
+      <th>Gluten Free:</th>
     </tr>
   </thead>
   <tbody>
     <% recipes.forEach(function(r) { %>
       <tr>
-        <td><%= r.title %></td>
-        <td><%=  r.ingredients %></td>
-        <td><%=  r.instructions %></td>
-        <td><img src="<%= r.pic %>"></td>
+        <td><%= r.name %></td>
+        <td><%= r.ingredients %></td>
+        <td><%= r.instructions %></td>
         <td><%= r.diet %></td>
-      </tr>
-      <% }); %>
+        <td><%= r.glutenFree ? 'Yes' : 'No' %></td>
+        <% }); %>
     </tbody>
   </table>
   <a href="/recipes/new">Add Recipe</a>

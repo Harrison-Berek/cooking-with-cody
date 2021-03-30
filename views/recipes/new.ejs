@@ -6,18 +6,20 @@
     <br>
     <label>Ingredients:</label>
     <br>
-    <textarea name="ingredient" cols="30" rows="10"></textarea>
+    <textarea name="ingredients" cols="30" rows="5"></textarea>
     <label>Instructions:</label>
-    <textarea name="instructions" cols="30" rows="10"></textarea>
-    <label>Diet:</label>
+    <textarea name="instructions" cols="30" rows="5"></textarea>
+    <label>Special Diet:</label>
     <select name="diet">
+        <option value="None">None</option>
         <option value="Vegan">Vegan</option>
         <option value="Vegetarian">Vegetarian</option>
         <option value="Pescatarian">Pescatarian</option>
     </select>
     <label>Gluten Free:</label>
     <input type="checkbox">
-</form>
+    <input type="submit" value="Add Recipe">
+</form> 
 
 <%- include('../partials/footer') %>
 

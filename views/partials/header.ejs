@@ -11,8 +11,8 @@
   <div id="nav-bar">
   <nav>
     <% if (user) { %>
-      <a href="/recipes">All Recipes</a>
-      <a href="/recipes">My Recipes</a>
+      <a href="/recipes/index">All Recipes</a>
+      <a href="/recipes/index">My Recipes</a>
       <a href="/logout">Log Out: <%= user.name %></a>
     <% } else { %>
       <a href="/auth/google" class="login">Log In</a>
