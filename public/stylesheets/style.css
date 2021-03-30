@@ -6,7 +6,7 @@ body {
 }
 
 #nav-bar {
-  background-color: #DCCCBB;
+  background-color: rgb(220, 204, 187, .85); 
   padding: .5vmin;
 }
 
@@ -38,4 +38,9 @@ nav > a:hover:not(.active) {
   background-color: #DCCCBB;
   font: 36px "Lucida Grande", Helvetica, Arial, sans-serif; 
   padding: 2vmin;
+}
+
+#food-pic {
+  width: 15vmin;
+  height: inherit;
 }

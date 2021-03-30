@@ -10,6 +10,6 @@ router.get('/new', isLoggedIn, recipesCtrl.new);
 //POST /recipes create new recipe
 router.post('/index', isLoggedIn, recipesCtrl.create);
 // Get /recipes/show show user recipes
-// router.get('/:id', isLoggedIn, recipesCtrl.show);
+router.get('/:id', isLoggedIn, recipesCtrl.show);
 
 module.exports = router;

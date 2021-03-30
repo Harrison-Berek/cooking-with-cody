@@ -3,7 +3,8 @@ const Recipe = require('../models/recipe');
 module.exports = {
     index,
     new: newRecipe,
-    create
+    create,
+    show
 }
 
 function index(req, res) {
@@ -23,13 +24,14 @@ function create(req, res) {
       }
     const recipe = new Recipe(req.body);
     recipe.userAdding = req.user._id;
-    console.log(recipe.name);
-    console.log(recipe.ingredients);
-    console.log(recipe.instructions);
-    console.log(recipe.diet);
-    console.log(recipe.glutenFree);
     recipe.save(function(err) {
       if (err) return redirect('/recipes/index');
       res.redirect('/recipes/index');
     });
+}
+
+function show(req, res) {
+    Recipe.findById(req.params.id, function(err, recipe) {
+        res.render('recipes/show', { title: 'Recipe Details', recipe});
+    })
 }
