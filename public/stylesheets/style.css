@@ -35,7 +35,7 @@ nav > a:hover:not(.active) {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #DCCCBB;
+  background-color: rgb(220, 204, 187, .85);
   font: 36px "Lucida Grande", Helvetica, Arial, sans-serif; 
   padding: 2vmin;
 }
@@ -44,3 +44,10 @@ nav > a:hover:not(.active) {
   width: 15vmin;
   height: inherit;
 }
+
+#show-page-pic {
+  position: center;
+  width: 50vmin;
+  height: auto;
+}
+

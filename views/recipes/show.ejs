@@ -1,4 +1,37 @@
 <%- include('../partials/header') %>
 
+<div>Name: </div>
+<div><%= recipe.name %></div>
+<br>
+<img id="show-pic"src="<%= recipe.pic %>">
+<br>
+<table id="show-recipe-details">
+    <thead>
+        <tr>
+            <th>Ingredients:</th>
+            <th>Instructions:</th>
+            <th>Diet:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= recipe.ingredients %></td>
+            <td><%= recipe.instructions %></td>
+            <td><%= recipe.diet %></td>
+        </tr>
+    </tbody>
+</table>
+
+<table id="show-comments">
+    <thead>
+
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+
+
 
 <%- include('../partials/footer') %>
