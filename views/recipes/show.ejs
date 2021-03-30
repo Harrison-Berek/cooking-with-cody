@@ -21,7 +21,27 @@
         </tr>
     </tbody>
 </table>
-
+<br>
+<h2>Beverage Pairing</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Style</th>
+            <th>Name</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <br>
+    <tbody>
+        <tr>
+            <th>wine</th>
+            <th>burgundy</th>
+            <th>good</th>
+        </tr>
+    </tbody>
+</table>
+<a href="/recipes/<%= recipe._id %>/pairing/new">Add Paring</a>
+<br>
 <h2>Commets</h2>
 <% if (user) {%> 
 <form id="show-comments-form" method="POST" action="/recipes/<%= recipe._id %>/comments">
@@ -33,7 +53,7 @@
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
-    <option value="5">5</option>
+    <option value="5" selected>5</option>
   </select>
   <label>Ease Rating:</label>
   <select name="easeRating">
@@ -41,7 +61,7 @@
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
-    <option value="5">5</option>
+    <option value="5" selected>5</option>
   </select>
   <label>Cook Time:</label>
   <input name="time" type="text">
