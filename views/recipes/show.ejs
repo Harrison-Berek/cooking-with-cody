@@ -26,23 +26,23 @@
 <table>
     <thead>
         <tr>
-            <th>Style</th>
-            <th>Name</th>
-            <th>Result</th>
+            <th>Style:</th>
+            <th>Name:</th>
+            <th>Result:</th>
         </tr>
     </thead>
-    <br>
     <tbody>
-        <tr>
-          <% pairings.forEach(function(p) { %>
-            <th><%= p.style %></th>
-            <th><%= p.name %></th>
-            <th><%= p.result %></th>
-          <% }); %>
+      <% pairings.forEach(function(p) { %>
+      <tr>
+          <td><%= p.style %> </td>
+          <td><%= p.name %></td>
+          <td><%= p.results %></td>
         </tr>
+        <% }); %>
     </tbody>
 </table>
 <a href="/recipes/<%= recipe._id %>/pairings/new">Add Pairing</a>
+<br>
 <br>
 <h2>Commets</h2>
 <% if (user) {%> 
@@ -81,7 +81,7 @@
         <th>Taste Rating</th>
         <th>Ease Rating</th>
         <th>Cook Time</th>
-        <th></th>
+        <th>Delete Comment</th>
       </tr>
     </thead>
     <tbody>
@@ -97,13 +97,13 @@
                 <td><%= c.tasteRating %></td>
                 <td><%= c.easeRating %></td>
                 <td><%= c.time %></td>
-            </tr>
-            <td>
-          <% if (user && user._id.equals(c.user)) { %>
-            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
-            </form>
-          <% } %>
+                <td>
+                  <% if (user && user._id.equals(c.user)) { %>
+                    <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                      <button type="submit">X</button>
+                    </form>
+                  <% } %>
+              </tr>
         </td>
       <% }); %>
       <tr>

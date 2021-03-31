@@ -12,14 +12,12 @@ router.get('/new', isLoggedIn, recipesCtrl.new);
 router.post('/index', isLoggedIn, recipesCtrl.create);
 // Get /recipes/show show user recipes
 router.get('/:id', isLoggedIn, recipesCtrl.show);
+// GET /recipe edit
+router.get('/:id/edit', isLoggedIn, recipesCtrl.edit);
 // PUT /recipe update
 router.put('/:id', isLoggedIn, recipesCtrl.update);
 // DELETE /recipe
 router.delete('/:id', isLoggedIn, recipesCtrl.delete);
-
-
-router.post('recipes/:id/pairings', isLoggedIn, pairingsCtrl.create);
-router.get('/:id/pairings/new', isLoggedIn, pairingsCtrl.new);
 
 
 module.exports = router;

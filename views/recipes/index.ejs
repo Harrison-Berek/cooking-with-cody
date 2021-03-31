@@ -7,8 +7,8 @@
       <th></th>
       <th>Diet:</th>
       <th>More Info:</th>
-      <th>Update Recipe</th>
-      <th>Delete Recipe</th>
+      <th>Update Recipe:</th>
+      <th>Delete Recipe:</th>
     </tr>
   </thead>
   <tbody>
@@ -18,12 +18,18 @@
         <td><img src="<%= r.pic %>" id="food-pic"></td>
         <td><%= r.diet %></td>
         <td><a href="/recipes/<%= r._id %>">More</a></td>
-        <% if (user && user._id.equals(r.user)) { %>
-          <td><a href=""></a></td>
-          <form action="/recipes/<%= r._id %>?_method=DELETE" method="POST">
-            <button type="submit">X</button>
-          </form>
-        <% } %>
+        <td><%= r.user %></td>
+        <td><%=  %></td>
+        <td>
+          <% if (user && user._id.equals(r.user)) {%> 
+            <% } %> 
+            <a href="/recipes/edit">update</a>
+        </td>
+        <td>
+            <form action="/recipes/<%= r._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
+          </td>
         <% }); %>
     </tbody>
   </table>
