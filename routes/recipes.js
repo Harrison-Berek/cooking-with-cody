@@ -12,12 +12,13 @@ router.get('/new', isLoggedIn, recipesCtrl.new);
 router.post('/index', isLoggedIn, recipesCtrl.create);
 // Get /recipes/show show user recipes
 router.get('/:id', isLoggedIn, recipesCtrl.show);
-
-//Need Delete and Update
+// PUT /recipe update
+router.put('/:id', isLoggedIn, recipesCtrl.update);
+// DELETE /recipe
+router.delete('/:id', isLoggedIn, recipesCtrl.delete);
 
 
 router.post('recipes/:id/pairings', isLoggedIn, pairingsCtrl.create);
-
 router.get('/:id/pairings/new', isLoggedIn, pairingsCtrl.new);
 
 
