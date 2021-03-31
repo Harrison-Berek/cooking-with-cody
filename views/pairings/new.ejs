@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<form action="/recipes/<%= recipeId %>" method="POST" id="new-pairing-form">
+    <label>Style:</label>
+    <select name="style">
+        <option value="Beer">Beer</option>
+        <option value="wine">wine</option>
+        <option value="Cocktail">Cocktail</option>
+        <option value="Non-Alcoholic">Non-Alcoholic</option>
+    </select>
+    <br>
+    <label>Name:</label>
+    <input name="name" type="text">
+    <label>Results:</label>
+    <textarea name="results" cols="30" rows="1"></textarea>
+    <input type="submit" value="Add Pairing">
+</form> 
+
+<%- include('../partials/footer') %>

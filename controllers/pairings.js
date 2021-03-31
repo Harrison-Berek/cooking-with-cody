@@ -7,6 +7,7 @@ module.exports = {
 
 function newPairing(req, res) {
     const recipeId = req.params.id;
+    console.log(req.params.id);
     res.render('pairings/new', {title: 'New Pairing', recipeId: recipeId});
 };
 

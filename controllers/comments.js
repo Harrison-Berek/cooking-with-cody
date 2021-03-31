@@ -16,11 +16,12 @@ function create(req, res) {
       });
     });
   }
+
   
   function deleteComment(req, res, next) {
     Recipe.findOne({'comments._id': req.params.id}).then(function(recipe){
       const comment = recipe.comments.id(req.params.id);
-      if (!comment.user.equals(req.user.id)) return res.redirect('/recipes');
+      if (!comment.user.equals(req.user.id)) return res.redirect(`/recipes/${recipe._id}`);
       comment.remove();
       recipe.save().then(function() {
         res.redirect(`/recipes/${recipe._id}`);

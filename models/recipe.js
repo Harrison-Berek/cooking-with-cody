@@ -34,10 +34,6 @@ const recipeSchema = new Schema({
         type: String,
         enum: ['None','Vegan', 'Vegetarian', 'Pescatarian']
     },
-    glutenFree: {
-        type: Boolean,
-        default: false
-    },
     user: {type: Schema.Types.ObjectId, ref: 'User'}, 
     comments: [commentSchema]
 }, {

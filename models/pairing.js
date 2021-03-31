@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
-const pairingSchema = ({
+const pairingSchema = new Schema({
     style: {
         type: String,
         enum: ['Beer', 'Wine', 'Cocktail', 'Non-Alcoholic']

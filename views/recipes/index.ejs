@@ -6,7 +6,6 @@
       <th>Name:</th>
       <th></th>
       <th>Diet:</th>
-      <th>Gluten Free:</th>
       <th>More Info:</th>
     </tr>
   </thead>
@@ -16,7 +15,6 @@
         <td><%= r.name %></td>
         <td><img src="<%= r.pic %>" id="food-pic"></td>
         <td><%= r.diet %></td>
-        <td><%= r.glutenFree ? 'Yes' : 'No' %></td>
         <td><a href="/recipes/<%= r._id %>">More</a></td>
         <% }); %>
     </tbody>
