@@ -38,6 +38,8 @@ function show(req, res) {
     Recipe.findById(req.params.id, function(err, recipe) {
         Pairing.find({recipe: recipe._id}, function(err, pairings) {
         res.render('recipes/show', { title: 'Recipe Details', recipe, pairings});
+        console.log(pairings);
+        console.log(recipe._id);
         });
     });
 };

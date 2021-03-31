@@ -12,7 +12,15 @@ function newPairing(req, res) {
 
 function create(req, res) {
     req.body.recipe = req.params.id;
-    Pairing.create(req.body, function(err, pairing){
+    const pairing = new Pairing(req.body)
+    pairing.save(function(err) {
+        if (err) return res.redirect(`/recipes/${req.params.id}`);
         res.redirect(`/recipes/${req.params.id}`)
-    });
+    })
 }
+
+
+
+
+
+
