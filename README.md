@@ -10,22 +10,22 @@
 ![Comments](https://i.imgur.com/xgVfGZG.png)
 
 <h2>Technologies Used:</h2>
-JavaScript
-Node.js
-Express
-Mongoose
+JavaScript<br>
+Node.js<br>
+Express<br>
+Mongoose<br>
 HTML/CSS
 <br><br>
 
 <h2>Links:</h2>
 Website: https://cooking-with-cody.herokuapp.com
-
+<br>
 Trello: https://trello.com/b/ZLxxiXpv/recipes
 <br><br>
 
 <h2>Upcoming Features:</h2> 
-- Show My Recipes
-- Filter by diet
-- Upload Images
+- Show My Recipes<br>
+- Filter by diet<br>
+- Upload Images<br>
 - Upload Video clips
 
