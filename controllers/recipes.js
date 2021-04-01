@@ -42,26 +42,29 @@ function show(req, res) {
 };
 
 function edit(req, res) {
-    Recipe.findOne({_id: req.params.id, userRecommending: req.user._id}, function(err, recipe) {
-        if (err || !recipe) return res.redirect('/recipes');
-        res.render('recipes/index', {recipe});
+    Recipe.findOne({_id: req.params.id}, function(err, recipe) {
+        if (err || !recipe) return res.redirect('/recipes/index');
+        res.render('recipes/edit', {title: 'Edit Recipe', recipe});
       });
 }
 
 function update(req, res) {
-    Recipe.findOneAndUpdate(
-        {_id: req.params.id, userRecommending: req.user._id},
-        req.body,
-        {new: true},
+    Recipe.findOneAndUpdate( 
+        {_id: req.params.id}, req.body, {new: true}, 
         function(err, recipe) {
-          if (err || !recipe) return res.redirect('/recipes/index');
-          res.redirect(`recipes/${recipe._id}`);
+            if(err || !recipe) return res.redirect('/recipes/index');
+            res.redirect(`/recipes/${recipe._id}`);
         }
       );
 }
 
 function deleteRecipe(req, res){
-    Recipe.findByIdAndDelete(req.params.id, function(err, deleteRecipe) {
-        res.redirect(`/recipes/${deleteRecipe}`)
-    })
+    Recipe.findByIdAndDelete(req.params.id, function(err, recipe) {
+        if(!recipe.user.equals(req.user._id)) {
+        res.redirect('/recpies/index')
+        } else {
+            res.redirect('/recipes/index')
+        }
+    });
 }
+

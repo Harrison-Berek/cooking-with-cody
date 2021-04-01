@@ -8,7 +8,7 @@
       <th>Diet:</th>
       <th>More Info:</th>
       <th>Update Recipe:</th>
-      <th>Delete Recipe:</th>
+      <th>Delete Recipe:</th> 
     </tr>
   </thead>
   <tbody>
@@ -20,7 +20,7 @@
         <td><a href="/recipes/<%= r._id %>">More</a></td>
         <td>
           <% if (user && user._id.equals(r.user)) {%> 
-            <a href="/recipes/edit">update</a>
+            <a href="/recipes/<%= r._id %>/edit">update</a>
           </td>
           <td>
             <form action="/recipes/<%= r._id %>?_method=DELETE" method="POST">
