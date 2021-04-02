@@ -34,10 +34,13 @@ nav > a:hover:not(.active) {
 #welcome{
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   background-color: rgb(220, 204, 187, .85);
   font: 36px "Lucida Grande", Helvetica, Arial, sans-serif; 
   padding: 2vmin;
+  width: 50vh;
+
 }
 
 #food-pic {
@@ -50,4 +53,36 @@ nav > a:hover:not(.active) {
   width: 50vmin;
   height: auto;
 }
+
+
+a {
+  text-decoration: none;
+  color:#EAB464;
+}
+
+#new-recipe-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button, .input-button {
+  background-color: #646E78;
+  color: #EAB464;
+}
+
+.input-button:hover {
+  background-color: #8D98A7;
+}
+
+button:hover {
+  background-color: #8D98A7;
+}
+
+
+
+
+
+
+
 

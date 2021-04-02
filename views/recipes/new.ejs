@@ -5,10 +5,11 @@
     <input type="text" name="name" required>
     <br>
     <label>Ingredients:</label>
-    <br>
     <textarea name="ingredients" cols="30" rows="5"></textarea>
+    <br>
     <label>Instructions:</label>
     <textarea name="instructions" cols="30" rows="5"></textarea>
+    <br>
     <label>Special Diet:</label>
     <select name="diet">
         <option value="None">None</option>
@@ -16,7 +17,8 @@
         <option value="Vegetarian">Vegetarian</option>
         <option value="Pescatarian">Pescatarian</option>
     </select>
-    <input type="submit" value="Add Recipe">
+    <br>
+    <input class="input-button" type="submit" value="Add Recipe">
 </form> 
 
 <%- include('../partials/footer') %>

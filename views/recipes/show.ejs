@@ -1,7 +1,6 @@
 <%- include('../partials/header') %>
 
-<div>Name: </div>
-<div><%= recipe.name %></div>
+<div>Name: <%= recipe.name %></div>
 <br>
 <img id="show-pic"src="<%= recipe.pic %>">
 <br>
@@ -41,7 +40,7 @@
         <% }); %>
     </tbody>
 </table>
-<a href="/recipes/<%= recipe._id %>/pairings/new">Add Pairing</a>
+<button><a href="/recipes/<%= recipe._id %>/pairings/new">Add Pairing</a></button>
 <br>
 <br>
 <h2>Commets</h2>
@@ -67,7 +66,7 @@
   </select>
   <label>Cook Time:</label>
   <input name="time" type="text">
-  <input type="submit" value="Add Comment">
+  <input class="input-button" type="submit" value="Add Comment">
 </form>
 <% } %>
 
