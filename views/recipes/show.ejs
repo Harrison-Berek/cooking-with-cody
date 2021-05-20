@@ -1,46 +1,51 @@
 <%- include('../partials/header') %>
 
-<div>Name: <%= recipe.name %></div>
+<h2 class="center-text"><%= recipe.name %></h2>
 <br>
-<img id="show-pic"src="<%= recipe.pic %>">
-<br>
-<table id="show-recipe-details">
+<img class="center" id="show-pic"src="<%= recipe.pic %>">
+<div class="flex-ctr-ctr">
+  <table id="show-recipe-details">
     <thead>
-        <tr>
-            <th>Ingredients:</th>
-            <th>Instructions:</th>
-            <th>Diet:</th>
-        </tr>
+      <tr>
+        <th>Ingredients:</th>
+        <th>Instructions:</th>
+        <th>Diet:</th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><%= recipe.ingredients %></td>
-            <td><%= recipe.instructions %></td>
-            <td><%= recipe.diet %></td>
-        </tr>
+      <tr>
+        <td><%= recipe.ingredients %></td>
+        <td><%= recipe.instructions %></td>
+        <td><%= recipe.diet %></td>
+      </tr>
     </tbody>
-</table>
+  </table>
+</div>
 <br>
-<h2>Beverage Pairing</h2>
-<table>
+<h3 class="center-text">Beverage Pairing</h3>
+<div class="flex-ctr-ctr">
+  <table>
     <thead>
-        <tr>
-            <th>Style:</th>
-            <th>Name:</th>
-            <th>Result:</th>
-        </tr>
+      <tr>
+        <th>Style:</th>
+        <th>Name:</th>
+        <th>Result:</th>
+      </tr>
     </thead>
     <tbody>
       <% pairings.forEach(function(p) { %>
-      <tr>
+        <tr>
           <td><%= p.style %> </td>
           <td><%= p.name %></td>
           <td><%= p.results %></td>
         </tr>
         <% }); %>
-    </tbody>
-</table>
-<button><a href="/recipes/<%= recipe._id %>/pairings/new">Add Pairing</a></button>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex-ctr-ctr">
+    <button><a href="/recipes/<%= recipe._id %>/pairings/new">Add Pairing</a></button>
+  </div>
 <br>
 <br>
 <h2>Commets</h2>

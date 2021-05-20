@@ -79,6 +79,24 @@ button:hover {
   background-color: #8D98A7;
 }
 
+.flex-ctr-ctr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+
 
 
 
