@@ -5,7 +5,7 @@ body {
   background-image: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1494&q=80);
 }
 
-#nav-bar {
+#nav-bar, .body-background{
   background-color: rgb(220, 204, 187, .85); 
   padding: .5vmin;
 }
@@ -23,6 +23,8 @@ nav > a, nav > #username{
 
 nav > a:hover:not(.active) {
   background-color: #A7754D;
+  text-decoration: none;
+  color: black;
 }
 
 #page-title {
@@ -73,10 +75,17 @@ button, .input-button {
 
 .input-button:hover {
   background-color: #8D98A7;
+  color: #EAB464;
 }
 
 button:hover {
   background-color: #8D98A7;
+  color: #EAB464;
+}
+
+a:hover {
+  background-color: #8D98A7;
+  color: #EAB464;
 }
 
 .flex-ctr-ctr{
